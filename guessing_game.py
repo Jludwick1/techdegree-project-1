@@ -41,21 +41,24 @@ while True:
 	try:
 		guess = int(input("I'm thinking of a number between 1 and 10... \n Can you guess the number?  "))	
 	except ValueError:
-		print("Oh no! That's not a valid value. Try again...")
+			print("Oh no! That's not a valid value. Try again...")
 	else:
 		
-		while guess != answer:		
 			if guess > answer:
-				guess = int(input("It's lower...Guess again!  "))
+				print("It's lower...Guess again!  ")
 				attempts = attempts + 1
+				continue
 			elif guess < answer:
-				guess = int(input("It's higher...Try again!  "))
+				print("It's higher...Try again!  ")
 				attempts = attempts +1
+				continue
 			elif guess == answer:	
 				break
-	break
+
 print("Got it! Nice work!\n It took you {} attempts to guess the number".format(attempts))
 print("GAME OVER!")
 
 # Kick off the program by calling the start_game function.
 start_game()
+
+
